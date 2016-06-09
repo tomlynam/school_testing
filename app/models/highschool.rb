@@ -1,6 +1,8 @@
 class Highschool < ActiveRecord::Base
 	validates_presence_of :name, :location, :enrollment
 
+	has_many :mathclasses
+
 	def name_location
 		"#{name} is located in #{location}."
 	end
