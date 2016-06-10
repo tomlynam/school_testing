@@ -23,12 +23,13 @@ end
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  config.use_transactional_fixtures = true
-  config.infer_spec_type_from_file_location!
-  config.filter_rails_from_backtrace!
+
+  config.use_transactional_fixtures = false
+
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
+    # Changed this first one to truncation
+    DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)
   end
 
@@ -37,4 +38,8 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.infer_spec_type_from_file_location!
+
+  config.filter_rails_from_backtrace!
 end

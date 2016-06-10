@@ -1,2 +1,16 @@
-<h1>Mathclasses#show</h1>
-<p>Find me in app/views/mathclasses/show.html.erb</p>
+<h3 class="mathclass-header"><%= @mathclass.name %></h3>
+
+<ul>
+	<li>
+		Number of Students: <%= @mathclass.students %>
+	</li>
+</ul>
+
+<div>
+	<%= link_to 'Edit', edit_highschool_mathclass_path(@highschool, @mathclass), class: 'btn' %>      
+	<%= link_to 'Delete', highschool_mathclass_path(@highschool, @mathclass), method: :delete, class: 'btn red' %>	
+</div>
+
+<br>
+
+<%= link_to 'All Math Classes', highschool_mathclasses_path(@highschool), class: 'btn' %>

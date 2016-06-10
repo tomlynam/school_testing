@@ -1,0 +1,15 @@
+<%= form_for [@highschool, @mathclass] do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :students %>
+	<%= f.text_field :students %>
+
+	<%= f.submit nil, id: 'submit-mathclass-btn', class: 'btn' %>
+
+<% end %>
+
+<br>
+
+<%= link_to 'Back', :back, id: 'cancel-mathclass' %>

@@ -1,2 +1,27 @@
-<h1>Mathclasses#index</h1>
-<p>Find me in app/views/mathclasses/index.html.erb</p>
+<h3 class="mathclasses-header">Math Classes</h3>
+
+<br>
+
+<% if @mathclasses.any? %>
+	<% @mathclasses.each do |mathclass| %>
+		<ul>
+			<li class="mathclass-title">
+			<%= link_to mathclass.name, highschool_mathclass_path(@highschool, mathclass), class: "mathclass-link" %>
+			</li>
+		</ul>
+	<% end %>
+<% else %>
+  <h3 class='no-mathclasses-header'>No Math Classes, Recess!</h3>
+<% end %>
+
+
+<br>
+
+<%= link_to 'Create Math Class', new_highschool_mathclass_path(@highschool), id: 'new-mathclass-btn', class: 'btn' %>
+
+<br>
+<br>
+
+
+
+<%= link_to 'Back', highschool_path(@highschool) %>

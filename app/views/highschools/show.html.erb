@@ -1,2 +1,17 @@
-<h1>Highschools#show</h1>
-<p>Find me in app/views/highschools/show.html.erb</p>
+<h1 id='highschool-header'><%= @highschool.name %></h1>
+<h3>
+  <%= pluralize(@highschool.mathclasses.count, 'math class', 'math classes') %> are taught at this school.
+</h3>
+
+
+<%= link_to 'Math Classes', highschool_mathclasses_path(@highschool) %>
+
+<hr />
+
+<%= link_to 'Edit High School', edit_highschool_path(@highschool) %> |
+
+<%= link_to 'Delete High School', highschool_path, method: :delete %>
+
+<br>
+
+<%= link_to 'Back to all High Schools', highschools_path %>
