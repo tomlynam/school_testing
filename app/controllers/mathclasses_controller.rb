@@ -10,7 +10,7 @@ class MathclassesController < ApplicationController
   end
 
   def new
-  	@mathclass = Mathclasses.new
+  	@mathclass = Mathclass.new
   end
 
   def create

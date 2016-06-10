@@ -16,6 +16,5 @@ FactoryGirl.define do
 			enrollment 400
 		end
 
-
 	end
 end
